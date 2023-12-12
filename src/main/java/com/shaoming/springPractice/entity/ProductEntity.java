@@ -1,9 +1,13 @@
-package com.shaoming.springPractice.model;
+package com.shaoming.springPractice.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-public class Product {
-
+@Entity
+@Table(name = "product_table")
+public class ProductEntity {
+    @Id
     private String productId;
     private String title;
     private String description;
@@ -16,21 +20,19 @@ public class Product {
         this.productId = productId;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
+    public String getTitle() {
+        return title;
+    }
 
+    public String getDescription() {
+        return description;
+    }
 }
